@@ -1,12 +1,23 @@
-
+import React from 'react';
+import { currentPosts } from './data';
+import { Post } from './components/Post';
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={" "} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+          {currentPosts.map((post) => {
+            return (
+              <Post
+                key={post.id}
+                image={post.picture}
+                username={post.username}
+                body={post.body}
+                date={post.time}
+              />
+            );
+          })}
         <a
           className="App-link"
           href="https://reactjs.org"
