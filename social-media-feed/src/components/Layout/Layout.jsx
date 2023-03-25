@@ -10,7 +10,6 @@ const Layout = () => {
       <main>
         <div style={{marginBottom : "40px"}}>
         </div>
-
         <Outlet
         />
       </main>

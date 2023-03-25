@@ -26,3 +26,13 @@
 .Button:hover{
     background-color: #ccc;
 }
+.Form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
