@@ -10,6 +10,7 @@ export const FeedPage = () => {
                 return (
                     <Post
                         key={post.id}
+                        id = {post.id}
                         image={post.picture}
                         username={post.username}
                         body={post.body}

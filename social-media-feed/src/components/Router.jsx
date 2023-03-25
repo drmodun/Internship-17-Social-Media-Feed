@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBrowserRouter, Switch, Route, createRoutesFromElements } from 'react-router-dom';
+import { createBrowserRouter, Switch, Route, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 import NotFoundPage from '../pages/NotFoundPage';
 import LoginPage from '../pages/LoginPage';
 import PostPage from '../pages/PostPage';
@@ -16,5 +16,7 @@ const router = createBrowserRouter(createRoutesFromElements([
     ]));    
 
 export const Router = () => {
-
+    return (
+        <RouterProvider     router={router}/>
+    );
 }

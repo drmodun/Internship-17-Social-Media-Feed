@@ -13,6 +13,7 @@ import { red } from '@mui/material/colors';
 import { Button } from '@mui/material';
 import classes from "./post.module.css"
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 export function Post(props) {
@@ -21,7 +22,7 @@ export function Post(props) {
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
-
+    console.log(props.key)
     return (
         <Card className={classes.Post} sx={{ maxWidth: 345 }}>
             <CardHeader
@@ -47,7 +48,9 @@ export function Post(props) {
 
             {mode === "default" ?
                 <CardActions disableSpacing>
+                    <Link to={"/"+String(props.id)}>
                     <button className={classes.Button} onClick={() => setMode("comments")}>See Comments ({props.comments.length})</button>
+                    </Link>
                 </CardActions> : mode === "comments" ?
                     props.comments.map((comment) => {
                         return(
