@@ -1,6 +1,6 @@
 
 import json from "./hardCoded.json";
-console.log(json);
+//console.log(json);
 class Post {
     constructor(id, picture, username, time, body, comments) {
         this.id = id;

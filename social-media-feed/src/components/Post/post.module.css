@@ -26,3 +26,7 @@
     cursor: pointer;
     transition: all 0.3s ease-out;
 }
+.Button:hover{
+    background-color: #f5f5f5;
+    color: #ccc;
+}

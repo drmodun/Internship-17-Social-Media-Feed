@@ -22,7 +22,8 @@ export function Post(props) {
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
-    console.log(props)
+    const date = new Date(props.date);
+    //console.log(props)
     return (
         <Card className={classes.Post} sx={{ maxWidth: 345 }}>
             <CardHeader
@@ -32,7 +33,7 @@ export function Post(props) {
                     </IconButton>
                 }
                 title={props.username}
-                subheader={props.date.toLocaleString()}
+                subheader={date.toLocaleDateString() + " " + date.toLocaleTimeString()}
             />
             <CardMedia
                 component="img"
