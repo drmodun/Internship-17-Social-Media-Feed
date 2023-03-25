@@ -25,6 +25,7 @@ export function Post(props) {
     return (
         <Card className={classes.Post} sx={{ maxWidth: 345 }}>
             <CardHeader
+
                 action={
                     <IconButton aria-label="settings">
                     </IconButton>
