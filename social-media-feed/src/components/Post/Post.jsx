@@ -10,24 +10,21 @@ import Avatar from '@mui/material/Avatar';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
-
+import { Button } from '@mui/material';
+import classes from "./post.module.css"
+import { useState } from 'react';
 
 
 export function Post(props) {
-    const [expanded, setExpanded] = React.useState(false);
-
+    const [expanded, setExpanded] = useState(false);
+    const [mode, setMode] = useState(props.mode);
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card className={classes.Post} sx={{ maxWidth: 345 }}>
             <CardHeader
-                avatar={
-                    <Avatar sx={{ bgcolor: red[500] }} aria-label="post">
-                        R
-                    </Avatar>
-                }
                 action={
                     <IconButton aria-label="settings">
                     </IconButton>
@@ -46,12 +43,25 @@ export function Post(props) {
                     {props.body}
                 </Typography>
             </CardContent>
-            <CardActions disableSpacing>
-                
-                
-                   
-            </CardActions>
-            
+
+            {mode === "default" ?
+                <CardActions disableSpacing>
+                    <button className={classes.Button} onClick={() => setMode("comments")}>See Comments ({props.comments.length})</button>
+                </CardActions> : mode === "comments" ?
+                    props.comments.map((comment) => {
+                        return(
+                        <Post
+                            key={comment.id}
+                            image={comment.picture}
+                            username={comment.username}
+                            body={comment.body}
+                            date={comment.time}
+                            mode="none"
+                        />)
+                        //temporary showing comments on click, later will be a separate page
+                    })
+                    : null
+            }
         </Card>
     );
 }

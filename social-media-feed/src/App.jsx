@@ -1,6 +1,6 @@
 import React from 'react';
 import { currentPosts } from './data';
-import { Post } from './components/Post';
+import { Post } from './components/Post/Post';
 function App() {
 
   return (
@@ -15,6 +15,8 @@ function App() {
                 username={post.username}
                 body={post.body}
                 date={post.time}
+                mode="default"
+                comments={post.comments}
               />
             );
           })}
