@@ -22,7 +22,7 @@ export function Post(props) {
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
-    console.log(props.key)
+    console.log(props)
     return (
         <Card className={classes.Post} sx={{ maxWidth: 345 }}>
             <CardHeader
