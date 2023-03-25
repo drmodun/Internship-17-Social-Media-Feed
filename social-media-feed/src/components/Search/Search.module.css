@@ -1,0 +1,28 @@
+.Input{
+    width: 300px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #f5f5f5;
+    transition: background-color 0.3s ease-in-out;
+    box-sizing: border-box  ;
+}
+.Input:focus{
+    background-color: #ccc;
+}
+.Button{
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.Button:hover{
+    background-color: #ccc;
+}

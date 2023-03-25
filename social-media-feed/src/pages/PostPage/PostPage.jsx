@@ -13,7 +13,7 @@ export const PostPage = () => {
         const newPost = posts.find((post) => post.id === parseInt(postId));
         if (!newPost
         ) {
-            navigate("not-found");
+            navigate("/not-found", { replace: true });
         }
         setPost(newPost);
         console.log(post);
@@ -23,18 +23,28 @@ export const PostPage = () => {
         return null;
     }
     return (
-        <div className={classes.PostPage}>
-            <Post
+        <div style={{backroundColor: "#f5f5f5f5"}}>
+            <div className={classes.PostPage}>
+                <Post
 
-                key={post.id}
-                id={post.id}
-                image={post.picture}
-                username={post.username}
-                body={post.body}
-                date={post.time}
-                mode="comments"
-                comments={post.comments}
-            />
+                    key={post.id}
+                    id={post.id}
+                    image={post.picture}
+                    username={post.username}
+                    body={post.body}
+                    date={post.time}
+                    mode="comments"
+                    comments={post.comments}
+                />
+            </div>
+            <div className={classes.ButtonWrapper}>
+            <button className={classes.ReturnButton} onClick={
+                () => navigate({
+                    pathname: "/"
+                })}>
+                Return to Post
+            </button>
+            </div>
         </div>
     );
 }
