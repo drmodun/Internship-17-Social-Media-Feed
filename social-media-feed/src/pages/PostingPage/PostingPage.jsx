@@ -1,3 +1,5 @@
+//this site is never used, but it is an idea of how to create a post (probably will delete later)
+
 import { formControlClasses } from "@mui/material";
 import classes from "./post.module.css"
 import { useState } from "react";

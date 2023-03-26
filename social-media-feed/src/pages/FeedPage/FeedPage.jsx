@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import { useSearchParams, useNavigate} from "react-router-dom";
 import { local } from "../../data";
 export const FeedPage = () => {
-    const [params, setParams] = useState("");
     const [searchParams, setSearchParams] = useSearchParams();
     const navigate = useNavigate();
     const [showPosts, setShowPosts] = useState(posts);
