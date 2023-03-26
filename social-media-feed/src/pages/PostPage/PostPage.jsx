@@ -2,9 +2,8 @@ import classes from "./PostPage.module.css";
 import { posts } from "../../data";
 import { Post } from "../../components/Post/Post";
 import { useEffect, useState } from "react";
-import { useHistory, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { Navigate } from "react-router-dom";
 export const PostPage = () => {
     const { postId } = useParams();
     const navigate = useNavigate();
@@ -16,7 +15,6 @@ export const PostPage = () => {
             navigate("/not-found", { replace: true });
         }
         setPost(newPost);
-        console.log(post);
     }, [postId, navigate]);
 
     if (!post) {
