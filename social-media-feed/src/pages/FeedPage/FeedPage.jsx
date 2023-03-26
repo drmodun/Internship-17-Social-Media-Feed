@@ -2,7 +2,7 @@ import classes from "./FeedPage.module.css";
 import { posts } from "../../data";
 import { Post } from "../../components/Post/Post";
 import { useState, useEffect } from "react";
-import { useSearchParams, useNavigate} from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import { local } from "../../data";
 export const FeedPage = () => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -10,9 +10,7 @@ export const FeedPage = () => {
     const [showPosts, setShowPosts] = useState(posts);
 
     useEffect(() => {
-        if (local.getItem('user') === null || Date.now()-new Date(JSON.parse(local.getItem('timestamp'))) > 3600000*12) {
-            console.log("redirecting");
-            console.log(local.getItem("timestamp") , new Date(JSON.parse(local.getItem('timestamp')))-Date.now());
+        if (local.getItem('user') === null || Date.now() - new Date(JSON.parse(local.getItem('timestamp'))) > 3600000 * 12) {
             navigate("/login", { replace: true });
         }
     }, [])

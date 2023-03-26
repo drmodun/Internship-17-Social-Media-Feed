@@ -8,12 +8,10 @@ export const Search = () => {
     const navigate = useNavigate();
     function handleSubmit(event) {
         event.preventDefault();
-        console.log(params);
         
     }
     function handleSubmit(event) {
         event.preventDefault();
-        console.log(params);
         
         //setParams(event.target.value);
         // The serialize function here would be responsible for
@@ -26,13 +24,11 @@ export const Search = () => {
         let search = {
             string: params
         }
-        console.log(search);
         setSearchParams(search, { replace: true });
         navigate({
             pathname: "/",
             search: "string=" + params
         });
-        console.log(searchParams);
     };
 
 return (
