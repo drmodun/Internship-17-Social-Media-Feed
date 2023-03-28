@@ -1,4 +1,4 @@
-.Navigation{
+.Navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,7 +13,8 @@
     width: 100%;
     z-index: 100;
 }
-.Navigation >  a{
+
+.Navigation>a {
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -21,6 +22,7 @@
     transition: color 0.3s ease-in-out;
 
 }
-.Navigation >  a:hover{
+
+.Navigation>a:hover {
     color: #ccc;
 }

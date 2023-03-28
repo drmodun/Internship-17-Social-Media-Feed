@@ -6,7 +6,7 @@ const Navigation = () => {
   return (
     <nav className={classes.Navigation}>
       <Link to="/">Post Feed</Link>
-      <Search/>
+      <Search />
       <Link to="/login">{loggedIn ? loggedIn : "Login"}</Link>
     </nav>
   );

@@ -12,11 +12,7 @@ import { Link } from 'react-router-dom';
 
 
 export function Post(props) {
-    const [expanded, setExpanded] = useState(false);
     const [mode, setMode] = useState(props.mode);
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
     const date = new Date(props.date);
     return (
         <Card className={classes.Post} sx={{ maxWidth: 345 }}>
@@ -43,21 +39,20 @@ export function Post(props) {
 
             {mode === "default" ?
                 <CardActions disableSpacing>
-                    <Link to={"/"+String(props.id)}>
-                    <button className={classes.Button} onClick={() => setMode("comments")}>See Comments ({props.comments.length})</button>
+                    <Link to={"/" + String(props.id)}>
+                        <button className={classes.Button} onClick={() => setMode("comments")}>See Comments ({props.comments.length})</button>
                     </Link>
                 </CardActions> : mode === "comments" ?
                     props.comments.map((comment) => {
-                        return(
-                        <Post
-                            key={comment.id}
-                            image={comment.picture}
-                            username={comment.username}
-                            body={comment.body}
-                            date={comment.time}
-                            mode="none"
-                        />)
-                        //temporary showing comments on click, later will be a separate page
+                        return (
+                            <Post
+                                key={comment.id}
+                                image={comment.picture}
+                                username={comment.username}
+                                body={comment.body}
+                                date={comment.time}
+                                mode="none"
+                            />)
                     })
                     : null
             }
